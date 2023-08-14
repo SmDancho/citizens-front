@@ -23,7 +23,10 @@ a {
   max-width: 1440px;
   margin: auto;
 }
-
+.city {
+  display: flex;
+  flex-direction: column;
+}
 .citiy__data {
   display: flex;
   flex-direction: column;
@@ -36,6 +39,14 @@ a {
   cursor: pointer;
   margin-bottom: 10px;
 }
-.citiy__tooltip {
-  position: absolute;
+.city__select {
+  margin: 20px 0;
+  font-size: 18px;
+  width: auto;
+  height: auto;
+  outline: none;
+  padding: 10px;
+}
+.city__loading {
+  margin-left: 50px;
 }

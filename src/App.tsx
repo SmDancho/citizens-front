@@ -15,13 +15,14 @@ function App() {
   useEffect(() => {
     dispatch(getCitizensData(config));
   }, [config]);
-  if (isLoading) {
-    return <div className="container">loading...</div>;
-  }
   return (
     <>
       <div className="container">
-        <select name="config" onChange={(e) => handleConfig(e.target.value)}>
+        <select
+          className="city__select"
+          name="config"
+          onChange={(e) => handleConfig(e.target.value)}
+        >
           <option value={"['city', 'district', 'street']"}>
             city, district, street
           </option>
@@ -30,7 +31,11 @@ function App() {
             country, city, district, street, house
           </option>
         </select>
-        <DataComponent data={data} />
+        {isLoading ? (
+          <div className="city__loading">loading...</div>
+        ) : (
+          <DataComponent data={data} />
+        )}
       </div>
     </>
   );
